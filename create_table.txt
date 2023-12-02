@@ -1,0 +1,10 @@
+aws dynamodb create-table \
+  --attribute-definitions \
+    AttributeName=artist,AttributeType=S \
+    AttributeName=song,AttributeType=S \
+  --key-schema \
+    AttributeName=artist,KeyType=HASH \
+    AttributeName=song,KeyType=RANGE \
+  --table-name basicSongsTable \
+  --provisioned-throughput \
+    ReadCapacityUnits=1,WriteCapacityUnits=1
